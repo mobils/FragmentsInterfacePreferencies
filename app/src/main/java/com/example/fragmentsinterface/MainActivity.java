@@ -8,6 +8,7 @@ import androidx.preference.PreferenceManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -41,28 +42,37 @@ public class MainActivity extends AppCompatActivity implements Fragment1.onElMeu
          */
 
         //TODO: Ficar dins d'un menu o sino dins d'un botó
-        //Mostrar els settings:
-        Intent i = new Intent(this, SettingsActivity.class);
-        startActivity(i);
+
 
 
 
     }
 
-    
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
+        super.onCreateOptionsMenu(menu);
 
         //Mostra el menu.
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        return super.onOptionsItemSelected(item);
+         super.onOptionsItemSelected(item);
 
         //Quan cliques al menu ve aquí.
-        //TODO: Posar el intent que crida el Settings Activity
+        //el intent que crida el Settings Activity
+
+        //Mostrar els settings:
+        Intent i = new Intent(this, SettingsActivity.class);
+        startActivity(i);
+
+        return true;
     }
 
 
