@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <PreferenceCategory android:title="Datos personales">
+        <EditTextPreference
+            android:key="playerName"
+            android:title="Nombre del jugador"
+            android:summary="Pulse para teclear el nombre del jugador" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Ajustes del juego">
+        <ListPreference
+            android:key="figure" android:title="Tipo de figura"
+            android:summary="Pulse para mostrar la lista"
+            android:entries="@array/figures" android:entryValues="@array/figureCodes" android:dialogTitle="Elija la figura inicial"
+            android:defaultValue="circulo"/>
+        <CheckBoxPreference
+            android:key="music" android:title="Música de fondo"
+            android:summary="Marque si desea escuchar música"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/widgets">
+
+        <CheckBoxPreference
+            android:key="checkbox"
+            android:title="@string/title_checkbox_preference"
+            android:summary="@string/summary_checkbox_preference"/>
+
+        <SwitchPreferenceCompat
+            android:key="switch"
+            android:title="@string/title_switch_preference"
+            android:summary="@string/summary_switch_preference"/>
+
+        <DropDownPreference
+            android:key="dropdown"
+            android:title="@string/title_dropdown_preference"
+            android:entries="@array/figures"
+            app:useSimpleSummaryProvider="true"
+            android:entryValues="@array/figureCodes"/>
+
+        <SeekBarPreference
+            android:key="seekbar"
+            android:title="@string/title_seekbar_preference"
+            android:max="10"
+            android:defaultValue="5"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
